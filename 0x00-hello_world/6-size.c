@@ -1,8 +1,9 @@
 #include <stdio.h>
 /**
- *  * main - This is the entry point for the code.
- *  Return: zero if no error or non-zero values if error occurs.
- * */
+ * main - This is the entry point for the code.
+ *
+ * Return: zero if no error or non-zero values if error occurs.
+ */
 
 int main(void)
 {
