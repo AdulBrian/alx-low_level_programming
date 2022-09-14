@@ -2,9 +2,9 @@
 #include <ctype.h>
 
 /**
- *  * main -prints _putchar, followed by a new line.
- *   * Return: ALways 0 (if Successful)
- *    */
+ * main -prints _putchar, followed by a new line.
+ * Return: ALways 0 (if Successful)
+ */
 
 int main(void)
 {
