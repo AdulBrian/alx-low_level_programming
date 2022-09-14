@@ -1,19 +1,20 @@
-#include <stdio.h>
-/** main- print -put char*/
-/** print next line*/
-#define MAXSTRING 80//from w  w w.j  a v a2s .co m
 
-int main( void ){
-	    char message[] = "_putchar";    
-for (int count = 0; count < MAXSTRING; count++)
+#include"main.h"
+
+/**
+ *  * main - Entry point
+ *   *
+ *    * Return: Always 0 (Success)
+ *     */
+
+int main(void)
 {
-if (message[count] == '\0')
+char str[] = "_putchar";
+int ch;
+for (ch = 0; ch < 8; ++ch)
 {
-putchar('\n');
-break;
+_putchar(str[ch]);
 }
-else
-putchar(message[count]);
-}
-return 0;
+_putchar('\n');
+return (0);
 }
