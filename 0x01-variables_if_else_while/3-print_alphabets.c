@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * print aplhabets in lowe case and uper case,
+ *main- print aplhabets in lowe case and puper case,
  * a new line follows
  * Return: Always 0 (if Successful)
  */
