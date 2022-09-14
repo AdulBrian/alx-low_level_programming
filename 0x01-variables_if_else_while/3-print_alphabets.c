@@ -1,40 +1,23 @@
 #include <stdio.h>
+
 /**
-*description- print the alphabet in small letters and caps afterward
-*print upper caps alphabets
-*print new line
-*/ 
+ * print aplhabets in lowe case and uper case,
+ * a new line follows
+ * Return: Always 0 (if Successful)
+ */
 
 int main(void)
 {
-char ch;
-for (ch = 'a'; ch <= 'z'; ch++)
-{
-putchar(ch);
+	char ch;
+
+	for (ch = 'a'; ch <= 'z'; ch++)
+	{
+		putchar(ch);
+	}
+
+	for (ch = 'A'; ch <= 'Z'; ch++)
+		putchar(ch);
+	putchar('\n');
+
+	return (0);
 }
-for (ch = 'A'; ch <= 'Z'; ch++)
-putchar(ch);
-putchar('\n');
-return (0);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-									}
-
