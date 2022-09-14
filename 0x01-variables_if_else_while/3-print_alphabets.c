@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 /**
-* main - prints the alphabet in small letters and caps afterwards,
-* a new line follows
-* Return: Always 0 (if Successful)
+*description- print the alphabet in small letters and caps afterward
+*print upper caps alphabets
+*print new line
 */ 
 
 int main(void)
