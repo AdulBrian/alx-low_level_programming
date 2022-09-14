@@ -2,9 +2,9 @@
 
 /**
  * main - prints numbers les than 10,
- *   * a new line follows
- *    * Return: Aways 0 (if Sucessful)
- *     */
+ * a new line follows
+ * Return: Aways 0 (if Sucessful)
+ */
 
 int main(void)
 {
