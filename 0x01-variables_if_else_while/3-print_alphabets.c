@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /**
- *  * main - print alphabets in small lettere,
+ *  * main - prints the alphabet in small letters and caps afterwards,
+ *   * uppercase next,
  *    * a new line follows
  *     * Return: Always 0 (if Successful)
  *      */
@@ -13,5 +14,32 @@ int main(void)
 			for (ch = 'a'; ch <= 'z'; ch++)
 					{
 								putchar(ch);
+									}
+
+				for (ch = 'A'; ch <= 'Z'; ch++)
+							putchar(ch);
+					putchar('\n');
+
+						return (0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 									}
 
