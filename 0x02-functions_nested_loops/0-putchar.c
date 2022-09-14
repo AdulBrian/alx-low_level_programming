@@ -1,14 +1,19 @@
 #include <stdio.h>
-#include <ctype.h>
+/** main- print -put char*/
+/** print next line*/
+#define MAXSTRING 80//from w  w w.j  a v a2s .co m
 
-/**
- * main -prints _putchar, followed by a new line.
- * Return: ALways 0 (if Successful)
- */
-
-int main(void)
+int main( void ){
+	    char message[] = "_putchar";    
+for (int count = 0; count < MAXSTRING; count++)
 {
-		printf("_putchar");  
-		    printf("\n");	
-		    	return 0;
+if (message[count] == '\0')
+{
+putchar('\n');
+break;
+}
+else
+putchar(message[count]);
+}
+return 0;
 }
