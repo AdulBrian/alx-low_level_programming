@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- *checks for lowercase character
- * check number or an alphabet
+ *_islower - prints the alphabets in lower cas
+ * @alpha: number or an alphabet
  * Return: returns 0 if successful or 1 if otherwise
  */
 
