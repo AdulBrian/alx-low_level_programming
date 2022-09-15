@@ -15,7 +15,7 @@ else
 for (column = 0; column < n; column++)
 {
 i = column - 1;
-_putchar (space = 0; space <= i; space++)
+for (space = 0; space <= i; space++)
 _putchar(' ');
 _putchar('\\');
 _putchar('\n');
