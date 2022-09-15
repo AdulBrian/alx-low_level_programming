@@ -1,14 +1,16 @@
-#include <stdio.h>
-#include"main.h"
-/*main- print alphabets*/
-/*next line*/
+#include "main.h"
+/**
+ *  * print_alphabet - prints the alphabets in lower case
+ *   * Return: returns 0 if successful
+ *    */
 
-int main()
+void  print_alphabet(void)
 {
-for(int x = 'a'; x <= 'z'; x++) // Notice (x <= 'Z') > > (x <= 'z')
-{
-
-putchar(x);
-}
-return 0;
+char alphabet = 'a';
+	while (alphabet <= 'z')
+	{
+	_putchar(alphabet);
+	alphabet++;
+	}
+_putchar('\n');
 }
