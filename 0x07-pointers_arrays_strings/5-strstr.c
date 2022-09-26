@@ -15,14 +15,12 @@ while (*haystack != '\0')
 {
 str1 = haystack;  /*Setting Values*/
 str2 = needle;
-
 /*While comparism is possible*/
 while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
 {
 haystack++;
 str2++;
-}
-														
+}											
 if (*str2 == '\0')
 {
 return (str1); /*return pointer to location of haystack*/
