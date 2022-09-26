@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _memset - fills a memory buffer with a constant byte/character
  * @s: Pointer to the byte buffer
