@@ -4,10 +4,7 @@
  * _strstr - returns the location of a given substring in a string
  * @haystack: String to search
  * @needle: Substring to search for with @haystack
- *
  * Return: Pointer to @needle within @haystack
- * 
- *
  */
 char *_strstr(char *haystack, char *needle)
 {
