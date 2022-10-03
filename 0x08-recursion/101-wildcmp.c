@@ -1,64 +1,85 @@
 #include "main.h"
+#include <stdlib.h>
+
+int word_len(char *str);
+int count_words(char *str);
+char **strtow(char *str);
 
 /**
- * test - tests if wildcard is a proper match
- * @s5: string to compare
- * @s6: wildcard match to compare
- * @t5: first spot that was checked
- * @t6: first spot in wildcard comparison
+ * word_len - Locates the index marking the end of the
+ *            first word contained within a string.
+ * @str: The string to be searched.
  *
- * Return: spot that matches or NULL
+ * Return: The index marking the end of the initial word pointed to by str.
  */
-char *test(char *s5, char *s6, char *t5, char *t6)
+int word_len(char *str)
 {
-if (*s6 == '*' || (*s5 == '\0' && *s6 == '\0'))
-return (t5);
-else if (*s5 != *s6)
-return (wildcard(s5, t6));
-else
-return (test(s5 + 1, s6 + 1, t5, t6));
+int index = 0, len = 0;
+while (*(str + index) && *(str + index) != ' ')
+{
+len++;
+index++;
+}
+return (len);
 }
 /**
- * wildcard - checks for the wild
- * @s3: string to compare to
- * @s4: string to check
+ * count_words - Counts the number of words contained within a string.
+ * @str: The string to be searched.
  *
- * Return: pointer to spot in s3 that matches s4
+ * Return: The number of words contained within str.
  */
-char *wildcard(char *s3, char *s4)
+int count_words(char *str)
 {
-if (*s3 != *s4)
+int index = 0, words = 0, len = 0;
+for (index = 0; *(str + index); index++)
+len++;
+for (index = 0; index < len; index++)
 {
-if (*s3 == '\0')
-return (0);
-return (wildcard(s3 + 1, s4));
+if (*(str + index) != ' ')
+{
+words++;
+index += word_len(str + index);
 }
-return (test(s3 + 1, s4 + 1, s3, s4));
 }
+return (words);
+}
+
 /**
- * wildcmp - compares two strings
- * @s1: first string
- * @s2: second string, may contain wildcard *
+ * strtow - Splits a string into words.
+ * @str: The string to be split.
  *
- * Return: 1 if match, 0 if not
+ * Return: If str = NULL, str = "", or the function fails - NULL.
+ *         Otherwise - a pointer to an array of strings (words).
  */
-int wildcmp(char *s1, char *s2)
+char **strtow(char *str)
 {
-char *p;
-if (*s2 == '*' && *(s2 + 1) == '\0')
-return (1);
-else if (*s2 == '*' && *(s2 + 1) == '*')
-return (wildcmp(s1, s2 + 1));
-else if (*s2 == '*')
+char **strings;
+int index = 0, words, w, letters, l;
+if (str == NULL || str[0] == '\0')
+return (NULL);
+words = count_words(str);
+if (words == 0)
+return (NULL);
+strings = malloc(sizeof(char *) * (words + 1));
+if (strings == NULL)
+return (NULL);
+for (w = 0; w < words; w++)
 {
-p = wildcard(s1, s2 + 1);
-if (p == 0)
-return (0);
-return (wildcmp(p + 1, s2 + 2));
+while (str[index] == ' ')
+index++;
+letters = word_len(str + index);
+strings[w] = malloc(sizeof(char) * (letters + 1));
+if (strings[w] == NULL)
+{
+for (; w >= 0; w--)
+free(strings[w]);
+free(strings);
+return (NULL);
 }
-else if (*s1 != *s2)
-return (0);
-if (*s1 == '\0' && *s2 == '\0')
-return (1);
-return (wildcmp(s1 + 1, s2 + 1));
+for (l = 0; l < letters; l++)
+strings[w][l] = str[index++];
+strings[w][l] = '\0';
+}
+strings[w] = NULL;
+return (strings);
 }
