@@ -3,7 +3,7 @@
 /**
  * get_bit - returns the value of a bit at a given
  * index.
- * : unsigned long int input.
+ * @n: unsigned long int input.
  * @index: index of the bit.
  *
  * Return: value of the bit.
@@ -22,6 +22,5 @@ if (index == i)
 return (n & 1);
 }
 }
-
 return (-1);
 }
